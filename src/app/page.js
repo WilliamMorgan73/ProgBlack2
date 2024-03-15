@@ -1,13 +1,17 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import 'bootstrap/dist/css/bootstrap.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export default function Home() {
   return (
     <main>
-      <div class="col-md-4">
-        testing this out
-      </div>
+      <Container>
+        <Row>
+          <Col>testing out</Col>
+        </Row>
+      </Container>
 
     </main>
   );
