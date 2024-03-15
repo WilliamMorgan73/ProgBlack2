@@ -2,22 +2,16 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-function AutoLayoutSizingExample() {
+function MainColumn() {
   return (
     <Container>
       <Row>
-        <Col>1 of 3</Col>
-        <Col xs={6}>2 of 3 (wider)</Col>
-        <Col>3 of 3</Col>
-        <Col>3 of 3</Col>
-      </Row>
-      <Row>
-        <Col>1 of 3</Col>
-        <Col xs={5}>2 of 3 (wider)</Col>
-        <Col>3 of 3</Col>
+        <Col  className="bg-dark"></Col>
+        <Col >hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</Col>
+        <Col  className="bg-dark"></Col>
       </Row>
     </Container>
   );
 }
 
-export default AutoLayoutSizingExample;
+export default MainColumn;
