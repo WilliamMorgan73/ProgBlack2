@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import data from './data.json';
+import styles from './styles.css'
 
 function MainColumn() {
   return (
@@ -23,7 +24,13 @@ function MainColumn() {
             ))}
           </Row>
         </Col>
-        <Col xs={2}></Col>
+        <Col xs={2}>
+          <Row>
+            <div className="buttonContainer">
+              <button type="button" className="btn position-absolute bottom-0 end-0" style={{ backgroundColor: '#68246D', color: 'white' }}>Add Post</button>
+            </div>
+          </Row>
+        </Col>
       </Row>
     </Container>
   );

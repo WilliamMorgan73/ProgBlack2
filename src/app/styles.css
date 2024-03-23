@@ -1,0 +1,11 @@
+.addBtn {
+    padding: 10px 20px;
+    background-color: #68246D;
+    color: white;
+}
+
+.buttonContainer {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
