@@ -8,10 +8,6 @@ import AddPostModal from '@/app/components/addPostModal';
 
 function MainColumn() {
 
-  const [appear, setAppear] = useState(false);
-  const handleExit = () => setAppear(false);
-  const handleAppear = () => setAppear(true);
-
   return (
     <Container fluid className='bg-dark' style={{ minHeight: '100vh' }}>
       <Row>
