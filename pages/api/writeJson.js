@@ -23,6 +23,15 @@ export default function handler(req, res) {
         console.error('Error reading JSON file:', error);
       }
 
+      // Find the highest postID in existing data
+      const lastPostID = existingData.reduce((maxID, post) => Math.max(maxID, post.postID || 0), 0);
+
+      // Increment the last postID to get a new unique postID
+      const newPostID = lastPostID + 1;
+
+      // Assign the new postID to the postData
+      postData.postID = newPostID;
+
       // Append new data to existing data
       existingData.push(postData);
 
