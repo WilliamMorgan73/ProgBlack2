@@ -56,7 +56,7 @@ const AddPostModal = () => {
 
   return (
     <div className="buttonContainer">
-      <button type="button" className="btn position-absolute bottom-0 end-0" style={{ backgroundColor: '#68246D', color: 'white' }} onClick={handleAppear} >Add Post</button>
+      <button type="button" className="btn position-absolute bottom-0 end-0" style={{ backgroundColor: '#68246D', color: 'white', padding: 8}} onClick={handleAppear} >Add Post</button>
       <Modal show={appear} onHide={handleExit}>
         <Modal.Header closeButton>
           <Modal.Title>Add An Anonymous Post</Modal.Title>
