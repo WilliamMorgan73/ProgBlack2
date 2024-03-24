@@ -5,13 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from '../src/styles/styles.css';
 import { useState } from 'react';
 import AddPostModal from '@/app/components/addPostModal';
+import DisplayPost from '@/app/components/displayPost';
+
 
 function MainColumn() {
-
-  const [appear, setAppear] = useState(false);
-  const handleExit = () => setAppear(false);
-  const handleAppear = () => setAppear(true);
-
   return (
     <Container fluid className='bg-dark' style={{ minHeight: '100vh' }}>
       <Row>
@@ -20,6 +17,7 @@ function MainColumn() {
           <h1>Anonymous Posts</h1>
           <Row>
             <hr></hr>
+            <DisplayPost />
           </Row>
         </Col>
         <Col xs={2}>
