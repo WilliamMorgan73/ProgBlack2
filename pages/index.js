@@ -4,8 +4,7 @@ import { Container, Row, Col, Modal, Button, Form} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from '../src/styles/styles.css';
 import { useState } from 'react';
-import WriteJsonButton from '@/app/components/writeJsonButton';
-
+import AddPostModal from '@/app/components/addPostModal';
 
 function MainColumn() {
 
@@ -22,30 +21,10 @@ function MainColumn() {
           <Row>
             <hr></hr>
           </Row>
-          <WriteJsonButton />
         </Col>
         <Col xs={2}>
           <Row>
-            <div className="buttonContainer">
-              <button type="button" className="btn position-absolute bottom-0 end-0" style={{ backgroundColor: '#68246D', color: 'white' }} onClick={handleAppear} >Add Post</button>
-              <Modal show={appear} onHide={handleExit}>
-                <Modal.Header closeButton>
-                  <Modal.Title>Add An Anonymous Post</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <Form>
-                    <Form.Group className="mb-3" controlId="addPostForm.ControlTextarea1">
-                      <Form.Label>Post Content</Form.Label>
-                      <Form.Control as="textarea" rows={3} />
-                    </Form.Group>
-                  </Form>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={handleExit}>Close</Button>
-                  <Button variant="primary" style={{ backgroundColor: '#68246D', color: 'white' }} >Post</Button>
-                </Modal.Footer>
-              </Modal>
-            </div>
+            <AddPostModal />
           </Row>
         </Col>
       </Row>
