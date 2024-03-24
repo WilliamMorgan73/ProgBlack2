@@ -5,7 +5,7 @@ const DisplayPost = () => {
     return (
         <Container style={{ maxWidth: '98%' }}>
             {data.map((post) => (
-                <Card key={post.postID} style={{ border: '1px solid #ccc', borderRadius: '30px', margin: '10px 0' }}>
+                <Card key={post.postID} style={{ border: '1px solid #ccc', borderRadius: '15px', margin: '10px 0', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
                     <Card.Body>
                         <Card.Title>Post {post.postID}</Card.Title>
                         <Card.Text>{post.message}</Card.Text>
