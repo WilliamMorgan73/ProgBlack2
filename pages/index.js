@@ -2,9 +2,9 @@
 import React from 'react';
 import { Container, Row, Col, Modal, Button, Form} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import data from './data.json';
-import styles from './styles.css';
+import styles from '../src/styles/styles.css';
 import { useState } from 'react';
+import WriteJsonButton from '@/app/components/writeJsonButton';
 
 
 function MainColumn() {
@@ -22,15 +22,7 @@ function MainColumn() {
           <Row>
             <hr></hr>
           </Row>
-          <Row>
-            {data.posts.map((posts) => (
-              <div key={posts.id}>
-                <p>{posts.content}</p>
-                <p>{posts.date}</p>
-                <hr></hr>
-              </div>
-            ))}
-          </Row>
+          <WriteJsonButton />
         </Col>
         <Col xs={2}>
           <Row>
@@ -42,14 +34,6 @@ function MainColumn() {
                 </Modal.Header>
                 <Modal.Body>
                   <Form>
-                  <Form.Group className="mb-3" controlId="addPostForm.ControlInput1">
-                    <Form.Label>Post Date</Form.Label>
-                    <Form.Control
-                      type="date"
-                      placeholder="dd/mm/yy"
-                      autoFocus
-                    />
-                    </Form.Group>
                     <Form.Group className="mb-3" controlId="addPostForm.ControlTextarea1">
                       <Form.Label>Post Content</Form.Label>
                       <Form.Control as="textarea" rows={3} />
