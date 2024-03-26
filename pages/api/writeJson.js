@@ -11,6 +11,8 @@ export default function handler(req, res) {
         postData.creationTime = new Date().toISOString();
       }
 
+      postData.comments = [];
+
       // Path to the JSON file
       const filePath = path.join(process.cwd(), 'data', 'data.json');
 
