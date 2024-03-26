@@ -13,7 +13,9 @@
     "postID": 2,
     "message": "test",
     "creationTime": "2024-03-24T16:11:47.522Z",
-    "comments": []
+    "comments": [
+      { "message": "comment 1", "creationTime": "2024-03-26T22:55:59.141Z" }
+    ]
   },
   {
     "postID": 3,

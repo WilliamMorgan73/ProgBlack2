@@ -18,8 +18,24 @@ const DisplayPost = () => {
     }
 
     const handleSubmit = async () => {
-        console.log("comment submitted")
-        setAppear(false)
+        const creationTime = new Date().toISOString();
+
+        const { postID } = selectedPost
+
+        const commentData = {
+            postID,
+            message,
+            creationTime
+        };
+
+        const response = await fetch('/api/writeCommentJson', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(commentData),
+        });
+        handleExit();
     }
 
     const handleMessageChange = (event) => {
