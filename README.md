@@ -1,3 +1,9 @@
-Personal repository for the progblack 2 course work
+Repository for our prog black 2 group work
 
-This contains example of code, and my learning log
+This file contains our project code which can be run using:
+
+```
+npm run dev
+```
+
+Then accessing the site with [Local host](http://localhost:3000/)
