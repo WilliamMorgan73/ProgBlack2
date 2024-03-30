@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
-import { Button, Modal, Form, Dropdown} from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Button, Modal, Form, Dropdown } from 'react-bootstrap';
 import AddTag from '@/app/components/addTag';
+const data = require("@/../data/data.json");
 
 const AddPostModal = () => {
   const [appear, setAppear] = useState(false);
   const [message, setMessage] = useState('');
+  const [tags, setTags] = useState([]);
+  const [selectedTag, setSelectedTag] = useState('');
 
   const handleAppear = () => setAppear(true);
   const handleExit = () => {
     setAppear(false);
     setMessage(''); // Reset message input on modal exit
+    setSelectedTag(''); // Reset tag dropdown on modal exit
   };
 
   const handleSubmit = async () => {
@@ -27,7 +31,7 @@ const AddPostModal = () => {
         postID,
         message,
         creationTime,
-        tags,
+        tags: selectedTag,
       };
 
       // Send post data to the server
@@ -56,6 +60,29 @@ const AddPostModal = () => {
     setMessage(event.target.value);
   };
 
+  useEffect(() => {
+    // Fetch tags from data.json
+    const fetchData = async () => {
+      try {
+        const response = await fetch('@/../data/data.json');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        const tags = Array.from(new Set(data.map(post => post.tags)));
+        setTags(tags);
+      } catch (error) {
+        console.error('Error fetching tags:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+    const handleTagSelect = (tag) => {
+        setSelectedTag(tag)
+    }
+  
   return (
     <div className="buttonContainer">
       <button type="button" className="btn position-absolute bottom-0 end-0" style={{ backgroundColor: '#68246D', color: 'white', padding: 8}} onClick={handleAppear} >Add Post</button>
@@ -70,7 +97,7 @@ const AddPostModal = () => {
               <Form.Control as="textarea" rows={3} value={message} onChange={handleMessageChange} />
             </Form.Group>
             <Form.Label>Tags</Form.Label>
-            <AddTag />
+            <AddTag onSelect={handleTagSelect} />
           </Form>
         </Modal.Body>
         <Modal.Footer>

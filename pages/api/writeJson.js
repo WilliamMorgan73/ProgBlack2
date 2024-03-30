@@ -13,6 +13,7 @@ export default function handler(req, res) {
 
       postData.comments = [];
 
+
       // Path to the JSON file
       const filePath = path.join(process.cwd(), 'data', 'data.json');
 
