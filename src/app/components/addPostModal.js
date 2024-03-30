@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Modal, Form } from 'react-bootstrap';
+import { Button, Modal, Form, Dropdown} from 'react-bootstrap';
+import AddTag from '@/app/components/addTag';
 
 const AddPostModal = () => {
   const [appear, setAppear] = useState(false);
@@ -26,6 +27,7 @@ const AddPostModal = () => {
         postID,
         message,
         creationTime,
+        tags,
       };
 
       // Send post data to the server
@@ -67,6 +69,8 @@ const AddPostModal = () => {
               <Form.Label>Post Content</Form.Label>
               <Form.Control as="textarea" rows={3} value={message} onChange={handleMessageChange} />
             </Form.Group>
+            <Form.Label>Tags</Form.Label>
+            <AddTag />
           </Form>
         </Modal.Body>
         <Modal.Footer>
